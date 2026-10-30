@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitob haqida | Bookly</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md w-100 shadow-sm">
+        <div class="container-fluid px-3 px-lg-4">
+            <a class="navbar-brand me-lg-4" href="index.html">
+                <img src="images/logo.png" width="200" alt="Bookly">
+            </a>
+            <div class="navbar-collapse" id="asosiyMenyu">
+                <form class="qidiruv-shakli my-3" role="search">
+                    <div class="input-group">
+                        <input class="form-control border-0 rounded-start-pill ps-4" type="search"
+                            placeholder="Kitob nomi, muallif yoki kategoriya..." aria-label="Qidirish">
+                        <button class="btn btn-light border-0 rounded-end-pill" type="submit"
+                            aria-label="Qidirish">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="11" cy="11" r="7"></circle>
+                                <path stroke-linecap="round" d="m16 16 4 4"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <ul class="navbar-nav align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link text-nowrap" href="index.html">Bosh sahifa</a></li>
+                    <li class="nav-item"><a class="nav-link text-nowrap" href="catalog.html">Katalog</a></li>
+                    
+                    <li class="nav-item d-flex align-items-center gap-3">
+                        <a href="yoqimlilar.html" aria-label="Sevimlilar">
+                            <img src="images/yurak.png" width="45" height="45">
+                        </a>
+                        <a class="position-relative" href="savat.html" aria-label="Savat">
+                            <img src="images/savatcha.png" width="25" height="25">
+                            
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item d-none" id="boshqaruvPaneli"></li>
+                <li class="nav-item">
+                    <div class="hisob d-flex gap-3">
+                        <a href="sigIN.html" class="hisob-tugmasi">Kirish</a>
+                        <a href="sigUP.html" class="hisob-tugmasi">Ro'yxatdan o'tish</a>
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+        
+
+
+
+            <main class="container py-5">
+                <div class="card border-0 shadow position-relative" id="kitobTafsilotlari">
+                    <a href="yoqimlilar.html" id="sevimliKitob" class="position-absolute top-0 end-0 m-3" aria-label="Sevimlilarga qo'shish">
+                        <img src="images/qoravariantyurak.png" width="32" height="32">
+                    </a>
+                    <div class="row g-0">
+                        <div class="col-12 col-md-4 p-4 text-center">
+                            <img class="rasmcha img-fluid rounded" src="">
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="card-body p-4 p-lg-5">
+                                <p class="janr"></p>
+                                <h1 class="nomi display-5"></h1>
+                                <p class="muallif fs-5"></p>
+                                <p class="tavsif"></p>
+                                <p class="narx fs-4 fw-bold"></p>
+                                <a href="savat.html" onclick="savatgaqoshish(book.id); return false" class="hisob-tugmasi">Savatga qo'shish+</a>
+                                <a href="#" id="onlineKitob" class="hisob-tugmasi d-none" style="margin-left: 20px;" target="_blank" rel="noopener noreferrer">Online Ko'rish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="kitobTopilmadi" class="alert alert-warning d-none" role="alert">
+                    Kitob topilmadi. <a href="index.html" class="alert-link">Kitoblarga qayting.</a>
+                </div>
+            </main>
+
+
+
+
+
+
+
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const id = Number(new URLSearchParams(window.location.search).get("id"));
+        const book = Kitoblar.find(item => item.id === id);
+
+        if (book) {
+            document.querySelector(".rasmcha").src = book.rasm;
+            document.querySelector(".rasmcha").alt = book.nomi;
+            document.querySelector(".janr").textContent = book.janr;
+            document.querySelector(".nomi").textContent = book.nomi;
+            document.querySelector(".muallif").textContent = `Muallif: ${book.muallif}`;
+            document.querySelector(".tavsif").textContent = book.tavsif;
+            document.querySelector(".narx").textContent = `${book.narx} so'm`;
+            const onlineKitob = document.querySelector("#onlineKitob");
+            if (book.link) {
+                onlineKitob.href = book.link;
+                onlineKitob.classList.remove("d-none");
+            }
+            document.querySelector("#sevimliKitob").addEventListener("click", event => {
+                event.preventDefault();
+                const favorites = JSON.parse(localStorage.getItem("Favorites") || "[]");
+                if (!favorites.includes(book.id)) {
+                    favorites.push(book.id);
+                    localStorage.setItem("Favorites", JSON.stringify(favorites));
+                    alert("Yoqimlilarga qo'shildi");
+                } else {
+                    alert("Bu kitob yoqimlilarga qo'shilgan");
+                }
+            });
+        } else {
+            document.querySelector("#kitobTafsilotlari").classList.add("d-none");
+            document.querySelector("#kitobTopilmadi").classList.remove("d-none");
+        }
+
+    </script>
+    <a class="position-fixed bottom-0 end-0 m-3 hisob-tugmasi rejim-almashtirish" href="../tun/single.html" aria-label="Tungi rejimga o'tish" title="Tungi rejimga o'tish"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path></svg></a>
+</body>
+
+</html>

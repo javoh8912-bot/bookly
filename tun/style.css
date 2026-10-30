@@ -1,0 +1,961 @@
+body {
+    margin: 0;
+    background-color: #111512;
+    color: #e5ebe7;
+    font-family: Arial;
+}
+
+.navbar {
+    background-color: #191f1b;
+    box-shadow: 0 3px 12px #080a09;
+}
+
+.sayt-boshi {
+    background-color: #191f1b;
+    box-shadow: 0 3px 12px #080a09;
+}
+
+.sayt-menyusi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px 20px;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 12px 20px;
+}
+
+.logotip img {
+    display: block;
+    width: 150px;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.navbar-brand {
+    margin-right: 20px;
+}
+
+.qidiruv-shakli {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 460px;
+    min-width: 0;
+}
+
+.qidiruv-shakli .input-group {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #3a463e;
+    border-radius: 24px;
+    background-color: #202722;
+}
+
+.qidiruv-shakli input {
+    width: 100%;
+    min-width: 0;
+    height: 48px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 24px 0 0 24px;
+    background-color: #202722;
+    color: #e5ebe7;
+}
+
+.qidiruv-shakli input:focus {
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+}
+
+.qidiruv-shakli button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 0 24px 24px 0;
+    background-color: #2a342d;
+    color: #e5ebe7;
+}
+
+.menyu-havolalari {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 100%;
+    margin: 0;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 100%;
+    margin: 0;
+}
+
+.hisob {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 100%;
+    margin: 0;
+}
+
+#asosiyMenyu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 14px;
+    max-width: 100%;
+}
+
+#asosiyMenyu .nav-item {
+    margin: 0;
+}
+
+.navbar .nav-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar-nav .nav-item:nth-child(3) a:first-child img {
+    width: 36px;
+    height: 36px;
+}
+
+.navbar-nav .nav-item:nth-child(3) a:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #174c3b;
+}
+
+.navbar-nav .nav-item:nth-child(3) a:nth-child(2) img {
+    width: 25px;
+    height: 25px;
+}
+
+.navbar-nav .nav-item:nth-child(3) a:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #174c3b;
+}
+
+.nav-link {
+    color: #c4d8cb;
+    text-decoration: none;
+}
+
+.menyu-havolalari a {
+    color: #c4d8cb;
+    text-decoration: none;
+}
+
+.navbar .nav-link {
+    color: #c4d8cb;
+    text-decoration: none;
+}
+
+.hisob-havolasi {
+    color: #c4d8cb;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #e4b86a;
+}
+
+.menyu-havolalari a:hover {
+    color: #e4b86a;
+}
+
+.navbar .nav-link:hover {
+    color: #e4b86a;
+}
+
+.menyu-havolalari .hisob-tugmasi {
+    color: #ffffff;
+}
+
+.menyu-havolalari .hisob-tugmasi:hover {
+    color: #ffffff;
+}
+
+.belgi-havolasi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #174c3b;
+}
+
+.belgi-havolasi img {
+    width: 22px;
+    height: 22px;
+}
+
+.sevimli-havolasi img {
+    width: 28px;
+    height: 28px;
+}
+
+.navbar .hisob {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hisob-tugmasi {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid #174c3b;
+    border-radius: 20px;
+    background-color: #174c3b;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.hisob-tugmasi.rejim-almashtirish {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.rejim-almashtirish svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+button {
+    padding: 10px 16px;
+    border: 1px solid #174c3b;
+    border-radius: 20px;
+    background-color: #174c3b;
+    color: #ffffff;
+}
+
+.savatga-qoshish-tugmasi {
+    font-size: 13px;
+}
+
+.hisob-tugmasi:hover {
+    background-color: #bd8d3f;
+    color: #ffffff;
+}
+
+button:hover {
+    background-color: #bd8d3f;
+    color: #ffffff;
+}
+
+.bosh-qism {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1320px;
+    min-height: 390px;
+    margin-top: 40px;
+    padding: 50px;
+    border-radius: 24px;
+    background-color: #174c3b;
+    color: #ffffff;
+    box-shadow: 0 8px 20px #2f302f;
+    animation: appear 1s;
+}
+
+.bosh-qism-malumoti {
+    width: 65%;
+    max-width: 560px;
+}
+
+.bosh-qism-belgisi {
+    color: #e4b86a;
+}
+
+.bolim-belgisi {
+    color: #e4b86a;
+}
+
+.bosh-qism.container h1 {
+    color: #ffffff;
+    font-family: Georgia;
+    font-size: 58px;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.bosh-qism p {
+    max-width: 440px;
+    color: #e8eee8;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.bosh-qism-tugmasi {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 22px;
+    border: 0;
+    border-radius: 24px;
+    background-color: #e4b86a;
+    color: #123b30;
+    text-decoration: none;
+}
+
+.bosh-qism-tugmasi:hover {
+    background-color: #f0ca82;
+    color: #123b30;
+}
+
+.bosh-qism-rasmi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    min-height: 270px;
+}
+
+.bosh-qism-kitobi {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 190px;
+    height: 250px;
+    padding: 20px;
+    border: 3px solid #3a463e;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: animatsiyarasm 5s infinite;
+    background-color: #1b221e;
+}
+
+
+@keyframes animatsiyarasm{
+    25%{
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkagzVJRTSrLd0SZV23acMAy-rJXVUBxNsLr01oQfthYXdqFtkZg2pfDdC&s=10");
+    }
+    50%{
+        background-image: url("https://elib.tsul.uz/uploads/books/1777730626413-3033bf631766ffbe.jpg");
+    }
+    75%{
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9M7bX0yrAu1lmbIKYCi-y3Q3E-uIQDMk9irtAP4HskQ&s=10");
+    }
+    100%{
+        background-image: url("https://mutolaa.com/_next/image?url=https%3A%2F%2Fcdn-minio.mutolaa.com%2Fmedia%2Fbooks%2F2026%2F06%2Fphoto_2026-06-05_12-22-42.jpg&w=3840&q=75");
+    }
+}
+
+.bosh-qism-yaltirash {
+    color: #e4b86a;
+    font-size: 32px;
+}
+
+.kitoblar-bolimi {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.bolim-sarlavhasi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.bolim-sarlavhasi h2 {
+    margin: 0;
+    color: #e5ebe7;
+    font-family: Georgia;
+    font-size: 34px;
+}
+
+.katalog-havolasi {
+    color: #c4d8cb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.katalog-havolasi:hover {
+    color: #e4b86a;
+}
+
+.kitob-kartasi {
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #303a33;
+    border-radius: 16px;
+    background-color: #1b221e;
+    color: #e5ebe7;
+    box-shadow: 0 4px 12px #080a09;
+    animation: appear 1s;
+    transition: all 0.3s ease;
+}
+
+.kitob-kartasi:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px #080a09;
+}
+
+.muqova-qismi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 220px;
+    background-color: #252e28;
+    perspective: 900px;
+    transform-style: preserve-3d;
+}
+
+.muqova-qismi::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: calc(50% - 66px);
+    z-index: 3;
+    width: 132px;
+    height: 185px;
+    pointer-events: none;
+    clip-path: inset(0 0 0 100%);
+    border: 1px solid #3a463e;
+    border-radius: 4px 7px 7px 4px;
+    background: repeating-linear-gradient(90deg, #d4d0c5 0 2px, #a9a495 2px 3px);
+    box-shadow: 3px 4px 5px #080a09;
+    transform: translateX(5px) translateZ(-5px);
+    transition: transform 0.45s ease, clip-path 0.35s ease;
+}
+
+.muqova-qismi::after {
+    content: "";
+    position: absolute;
+    top: 17px;
+    left: calc(50% - 66px);
+    z-index: 0;
+    width: 132px;
+    height: 185px;
+    pointer-events: none;
+    border-radius: 5px;
+    background-color: #123b30;
+    transform: translateZ(-10px);
+    transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.kitob-muqovasi {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 132px;
+    height: 185px;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: 4px 6px 12px #080a09;
+    transform: translateZ(2px);
+    transform-origin: left center;
+    transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.kitob-kartasi:hover .kitob-muqovasi {
+    transform: translateZ(2px) rotateY(-12deg);
+}
+
+.kitob-kartasi:hover .muqova-qismi::before {
+    clip-path: inset(0 0 0 92%);
+    transform: translateX(6px) translateZ(3px);
+}
+
+.kitob-kartasi:hover .muqova-qismi::after {
+    transform: translateX(4px) translateZ(-1px);
+}
+
+.kitob-tahrirlash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 4;
+    width: 38px;
+    height: 38px;
+    padding: 9px;
+    border: 1px solid #303a33;
+    border-radius: 50%;
+    background-color: #252e28;
+    color: #e4b86a;
+    box-shadow: 0 3px 8px #080a09;
+    cursor: pointer;
+}
+
+.kitob-tahrirlash svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.kitob-tahrirlash:hover {
+    border-color: #e4b86a;
+    background-color: #2a342d;
+}
+
+.sevimli-havolasi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #303a33;
+    border-radius: 50%;
+    background-color: #252e28;
+    box-shadow: 0 3px 8px #080a09;
+}
+
+.sevimli-havolasi img {
+    width: 28px;
+    height: 28px;
+}
+
+.sevimli-havolasi:hover {
+    border-color: #e4b86a;
+    background-color: #2a342d;
+}
+
+.kitob-malumoti {
+    padding: 18px;
+}
+
+.kitob-janri {
+    color: #aebbb2;
+}
+
+.janr {
+    color: #aebbb2;
+}
+
+.kitob-nomi {
+    color: #e5ebe7;
+    font-family: Georgia;
+    font-size: 20px;
+}
+
+.kitob-muallifi {
+    color: #aebbb2;
+}
+
+.kitob-tavsifi {
+    color: #aebbb2;
+}
+
+.kitob-pasti {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.kitob-narxi {
+    color: #c4d8cb;
+}
+
+.sahifa-sarlavhasi {
+    margin: 30px 0;
+    color: #e5ebe7;
+    font-family: Georgia;
+    font-size: 36px;
+    text-align: center;
+}
+
+#janrFiltri {
+    border: 1px solid #3a463e;
+    border-radius: 10px;
+    background-color: #202722;
+    color: #e5ebe7;
+}
+
+.katalog-filtri {
+    max-width: 320px;
+}
+
+.form-select {
+    border: 1px solid #3a463e;
+    border-radius: 10px;
+    background-color: #202722;
+    color: #e5ebe7;
+}
+
+.kitob-yoq {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #1b221e;
+    color: #aebbb2;
+    text-align: center;
+}
+
+#kitobTopilmadiXabari {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #1b221e;
+    color: #aebbb2;
+    text-align: center;
+}
+
+.bosh-xabar {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #1b221e;
+    color: #aebbb2;
+    text-align: center;
+}
+
+#savatXulosasi {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #1b221e;
+    color: #c4d8cb;
+    box-shadow: 0 4px 12px #080a09;
+}
+
+#kitobTafsilotlari {
+    border: 1px solid #303a33;
+    border-radius: 16px;
+    background-color: #1b221e;
+    color: #e5ebe7;
+    box-shadow: 0 6px 18px #080a09;
+}
+
+#kitobTafsilotlari .nomi {
+    color: #e5ebe7;
+}
+
+#kitobTafsilotlari .muallif {
+    color: #e5ebe7;
+}
+
+#kitobTafsilotlari .tavsif {
+    color: #e5ebe7;
+}
+
+#kitobTafsilotlari .narx {
+    color: #e5ebe7;
+}
+
+.tolov-kartasi {
+    max-width: 550px;
+    border: 1px solid #303a33;
+    border-radius: 16px;
+    background-color: #1b221e;
+    color: #e5ebe7;
+    box-shadow: 0 6px 18px #080a09;
+}
+
+.tolov-kartasi .form-control {
+    border-color: #3a463e;
+    background-color: #202722;
+    color: #e5ebe7;
+}
+
+.tolov-kartasi .form-control::placeholder {
+    color: #a4b1a8;
+}
+
+.tolov-kartasi h1 {
+    color: #e5ebe7;
+    font-family: Georgia;
+    text-align: center;
+}
+
+.malumot-shakli {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 28px;
+    border: 1px solid #303a33;
+    border-radius: 16px;
+    background-color: #1b221e;
+    color: #e5ebe7;
+    box-shadow: 0 6px 18px #080a09;
+}
+
+.malumot-shakli h1 {
+    color: #e5ebe7;
+    font-family: Georgia;
+    text-align: center;
+}
+
+.malumot-shakli label {
+    color: #e5ebe7;
+}
+
+.malumot-shakli input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #3a463e;
+    border-radius: 8px;
+    background-color: #202722;
+    color: #e5ebe7;
+}
+
+.malumot-shakli textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #3a463e;
+    border-radius: 8px;
+    background-color: #202722;
+    color: #e5ebe7;
+}
+
+.malumot-shakli select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #3a463e;
+    border-radius: 8px;
+    background-color: #202722;
+    color: #e5ebe7;
+}
+
+.yozuv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px 0;
+}
+
+.yozuv a {
+    color: #c4d8cb;
+    font-size: 32px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.yozuv a:hover {
+    color: #e4b86a;
+}
+
+
+.pastkiqism {
+    padding: 40px 7%;
+    background: linear-gradient(135deg, #123b30, #09271f);
+    color: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+
+    border-top: 3px solid #c5a45d;
+    font-family: Arial, sans-serif;
+}
+
+.filiallar {
+    flex: 1;
+}
+
+.buglanish {
+    flex: 1;
+}
+
+.pastkiqism .form-label {
+    display: inline-block;
+    font-weight: bold;
+    color: #e4b86a;
+    margin-bottom: 15px;
+}
+
+.pastkiqism ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pastkiqism li {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #e0e8e4;
+    transition: 0.3s;
+}
+
+.pastkiqism li:hover {
+    color: #e4b86a;
+    padding-left: 5px;
+}
+
+
+
+.sayt-pasti {
+    padding: 20px;
+    background-color: #0c1c15;
+    color: #ffffff;
+    text-align: center;
+}
+
+.savat-muqovasi {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background-color: #252e28;
+}
+
+.tugma:hover {
+    background-color: #174c3b;
+    color: #ffffff;
+}
+
+@media (max-width: 991px) {
+    .sayt-menyusi .menyu-havolalari {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .sayt-menyusi {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .sayt-menyusi .logotip img {
+        width: 120px;
+    }
+
+    .navbar .container-fluid {
+        justify-content: center;
+    }
+
+    .navbar-brand {
+        margin-right: auto;
+    }
+
+    #asosiyMenyu {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    #asosiyMenyu form {
+        width: 100%;
+        max-width: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sayt-menyusi .menyu-havolalari {
+        gap: 10px;
+    }
+
+    .sayt-menyusi .belgi-havolasi {
+        width: 36px;
+        height: 36px;
+    }
+
+    .sayt-menyusi .hisob-tugmasi {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .bosh-qism {
+        min-height: 0;
+        padding: 30px;
+    }
+
+    .bosh-qism-malumoti {
+        width: 100%;
+    }
+
+    .bosh-qism.container h1 {
+        font-size: 38px;
+    }
+
+    .bolim-sarlavhasi h2 {
+        font-size: 26px;
+    }
+
+    .kitob-pasti {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -12px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
