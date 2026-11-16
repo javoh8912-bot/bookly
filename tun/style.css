@@ -959,3 +959,589 @@ button:hover {
         margin-top: 0;
     }
 }
+
+/* ===== single.html: kitob sahifasi ===== */
+.kitob-sahifasi {
+    --s-karta: #1b221e;
+    --s-panel: #151b17;
+    --s-panel-yorug: #26302a;
+    --s-chegara: #303a33;
+    --s-matn: #e5ebe7;
+    --s-xira: #aebbb2;
+    --s-asosiy: #1d5a46;
+    --s-asosiy-matn-rang: #c4d8cb;
+    --s-ikkinchi: #c4d8cb;
+    --s-oltin: #e4b86a;
+    --s-oltin-matn: #111512;
+    --s-chip: #2f3a2a;
+    --s-chip-matn: #e4b86a;
+    --s-yurak-fon: #e5ebe7;
+    --s-soya: rgba(0, 0, 0, .45);
+    --s-kitob-soya: rgba(0, 0, 0, .65);
+    --s-orqa: #0b0f0d;
+    --s-orqa-yorug: #1a221d;
+    --s-orqa-matn: #e5ebe7;
+    --s-qogoz: #e7ddc5;
+    --s-qogoz-chet: #c9bfa4;
+    --s-siyoh: #2a2418;
+    --s-siyoh-xira: #6d644f;
+    --s-muqova-fon: #123b30;
+}
+
+.kitob-sahifasi .s-yoli {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: var(--s-xira);
+    font-size: 14px;
+}
+
+.kitob-sahifasi .s-yoli a {
+    color: var(--s-xira);
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.kitob-sahifasi .s-yoli a:hover {
+    color: var(--s-oltin);
+}
+
+.kitob-sahifasi .s-yoli #yoliNomi {
+    color: var(--s-matn);
+    font-weight: 600;
+}
+
+.kitob-sahifasi #kitobTafsilotlari {
+    overflow: hidden;
+    border: 1px solid var(--s-chegara);
+    border-radius: 24px;
+    background-color: var(--s-karta);
+    color: var(--s-matn);
+    box-shadow: 0 18px 44px var(--s-soya);
+    animation: appear .6s;
+}
+
+.kitob-sahifasi .s-muqova-paneli {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 44px 28px;
+    background: radial-gradient(circle at 50% 35%, var(--s-panel-yorug), var(--s-panel) 70%);
+    border-right: 1px solid var(--s-chegara);
+}
+
+.kitob-sahifasi .s-kitob {
+    position: relative;
+    width: min(100%, 270px);
+}
+
+.kitob-sahifasi .s-kitob::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 4px 12px 12px 4px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .28) 0, rgba(255, 255, 255, .14) 3%, transparent 8%);
+    pointer-events: none;
+}
+
+.kitob-sahifasi .rasmcha {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 4px 12px 12px 4px !important;
+    background-color: var(--s-panel);
+    box-shadow: 14px 20px 34px var(--s-kitob-soya);
+    transition: transform .35s;
+}
+
+.kitob-sahifasi .s-kitob:hover .rasmcha {
+    transform: translateY(-6px) rotate(-1deg);
+}
+
+.kitob-sahifasi .s-sevimli {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--s-chegara);
+    border-radius: 50%;
+    background-color: var(--s-yurak-fon);
+    box-shadow: 0 4px 12px var(--s-soya);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.kitob-sahifasi .s-sevimli:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px var(--s-soya);
+}
+
+.kitob-sahifasi .s-malumot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 48px 56px 48px 48px;
+}
+
+.kitob-sahifasi .janr {
+    align-self: flex-start;
+    margin: 0 0 16px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background-color: var(--s-chip);
+    color: var(--s-chip-matn);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.kitob-sahifasi .nomi {
+    margin: 0 0 8px;
+    padding-right: 40px;
+    color: var(--s-matn);
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.15;
+}
+
+.kitob-sahifasi .muallif {
+    margin: 0;
+    color: var(--s-asosiy-matn-rang);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.kitob-sahifasi .s-chiziq {
+    width: 64px;
+    height: 3px;
+    margin: 24px 0;
+    border: 0;
+    border-radius: 3px;
+    background-color: var(--s-oltin);
+    opacity: 1;
+}
+
+.kitob-sahifasi .tavsif {
+    max-width: 62ch;
+    margin: 0 0 32px;
+    color: var(--s-matn);
+    font-size: 17px;
+    line-height: 1.75;
+    opacity: .88;
+}
+
+.kitob-sahifasi .s-sotuv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px 32px;
+    padding-top: 28px;
+    border-top: 1px dashed var(--s-chegara);
+}
+
+.kitob-sahifasi .s-narx-yozuvi {
+    color: var(--s-xira);
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.kitob-sahifasi .narx {
+    margin: 2px 0 0;
+    color: var(--s-oltin);
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.kitob-sahifasi .s-tugmalar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.kitob-sahifasi .s-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border: 2px solid var(--s-asosiy);
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .2s, color .2s, border-color .2s, transform .2s, box-shadow .2s;
+}
+
+.kitob-sahifasi .s-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.kitob-sahifasi .s-btn-asosiy {
+    background-color: var(--s-asosiy);
+    color: #ffffff;
+    box-shadow: 0 8px 18px var(--s-soya);
+}
+
+.kitob-sahifasi .s-btn-ikkinchi {
+    background-color: transparent;
+    border-color: var(--s-ikkinchi);
+    color: var(--s-ikkinchi);
+}
+
+.kitob-sahifasi .s-btn:hover {
+    border-color: var(--s-oltin);
+    background-color: var(--s-oltin);
+    color: var(--s-oltin-matn);
+    transform: translateY(-2px);
+}
+
+.kitob-sahifasi .s-btn:focus-visible,
+.kitob-sahifasi .s-sevimli:focus-visible {
+    outline: 3px solid var(--s-oltin);
+    outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+    .kitob-sahifasi .s-muqova-paneli {
+        padding: 36px 20px;
+        border-right: 0;
+        border-bottom: 1px solid var(--s-chegara);
+    }
+
+    .kitob-sahifasi .s-malumot {
+        padding: 28px 22px 32px;
+    }
+
+    .kitob-sahifasi .s-sotuv,
+    .kitob-sahifasi .s-tugmalar {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .kitob-sahifasi .s-btn {
+        width: 100%;
+    }
+}
+
+/* ===== single.html: sayt ichida kitob (muqova + qog'oz sahifada sayt) ===== */
+.kitob-sahifasi [hidden] {
+    display: none !important;
+}
+
+.kitob-sahifasi .s-oqish {
+    position: fixed;
+    inset: 0;
+    z-index: 1080;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 50% 45%, var(--s-orqa-yorug), var(--s-orqa) 75%);
+    color: var(--s-orqa-matn);
+    animation: appear .3s;
+}
+
+.kitob-sahifasi .s-oqish-boshi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--s-chegara);
+    background-color: var(--s-panel);
+}
+
+.kitob-sahifasi .s-oqish-nomi {
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.kitob-sahifasi .s-oqish-tugmalar,
+.kitob-sahifasi .b-pastki {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.kitob-sahifasi .s-oqish .s-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.kitob-sahifasi .b-pastki {
+    padding: 14px 16px 18px;
+}
+
+.kitob-sahifasi .b-sahna {
+    --pw: min(46vw, calc((100vh - 190px) / 1.32), 600px);
+    --ph: calc(var(--pw) * 1.32);
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kitob-sahifasi .b-kitob {
+    position: relative;
+    width: calc(var(--pw) * 2);
+    height: var(--ph);
+    perspective: 2600px;
+}
+
+.kitob-sahifasi .b-kitob.b-yakka {
+    width: var(--pw);
+}
+
+/* qog'oz */
+.kitob-sahifasi .b-sahifa {
+    position: absolute;
+    top: 0;
+    width: var(--pw);
+    height: var(--ph);
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: var(--s-qogoz);
+    background-image: repeating-linear-gradient(0deg, rgba(120, 95, 50, .04) 0 1px, transparent 1px 3px),
+        radial-gradient(circle at 50% 40%, rgba(255, 255, 255, .25), transparent 70%);
+    color: var(--s-siyoh);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(11px, calc(var(--pw) / 26), 17px);
+    line-height: 1.6;
+}
+
+.kitob-sahifasi .b-sahifa::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 14%;
+    pointer-events: none;
+}
+
+.kitob-sahifasi .b-sahifa[data-yon="chap"]::before {
+    right: 0;
+    background: linear-gradient(270deg, rgba(60, 40, 10, .3), transparent);
+}
+
+.kitob-sahifasi .b-sahifa[data-yon="ong"]::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(60, 40, 10, .3), transparent);
+}
+
+.kitob-sahifasi .b-sahifa[data-yon="chap"] {
+    border-radius: 6px 0 0 6px;
+}
+
+.kitob-sahifasi .b-sahifa[data-yon="ong"] {
+    border-radius: 0 6px 6px 0;
+}
+
+.kitob-sahifasi .b-ong {
+    left: var(--pw);
+    box-shadow: 2px 3px 0 -1px var(--s-qogoz-chet), 4px 6px 0 -2px var(--s-qogoz), 6px 9px 0 -3px var(--s-qogoz-chet), 14px 24px 40px rgba(0, 0, 0, .45);
+}
+
+.kitob-sahifasi .b-yakka .b-ong {
+    left: 0;
+    border-radius: 4px 8px 8px 4px;
+}
+
+/* qog'oz ichidagi sayt */
+.kitob-sahifasi .b-yuklanish {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 40px 12% 0 18%;
+    color: var(--s-siyoh-xira);
+    text-align: center;
+}
+
+.kitob-sahifasi #oqishOyna {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    bottom: 14px;
+    left: 20px;
+    width: calc(100% - 32px);
+    height: calc(100% - 28px);
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+}
+
+/* muqova (ichki tomoni = titul sahifa) */
+.kitob-sahifasi .b-muqova {
+    position: absolute;
+    top: 0;
+    left: var(--pw);
+    z-index: 6;
+    width: var(--pw);
+    height: var(--ph);
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    cursor: grab;
+    outline: none;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.kitob-sahifasi .b-muqova.b-tortilmoqda {
+    cursor: grabbing;
+}
+
+.kitob-sahifasi .b-yakka .b-muqova {
+    left: 0;
+}
+
+.kitob-sahifasi .b-muqova .b-sahifa {
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    box-shadow: -14px 24px 40px rgba(0, 0, 0, .4);
+}
+
+.kitob-sahifasi .b-muqova-old {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 4px 12px 12px 4px;
+    backface-visibility: hidden;
+    background-color: var(--s-muqova-fon);
+    box-shadow: 14px 22px 44px rgba(0, 0, 0, .55);
+}
+
+.kitob-sahifasi .b-muqova-old img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+.kitob-sahifasi .b-muqova-old::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .4) 0, rgba(255, 255, 255, .16) 3%, transparent 9%);
+    pointer-events: none;
+}
+
+.kitob-sahifasi .b-ochish-yozuv {
+    position: absolute;
+    right: 8%;
+    bottom: 5%;
+    left: 8%;
+    z-index: 1;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background-color: rgba(0, 0, 0, .6);
+    color: #ffffff;
+    font-size: 13px;
+    text-align: center;
+}
+
+.kitob-sahifasi .b-soya {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    backface-visibility: hidden;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .45), transparent 40%, transparent 60%, rgba(0, 0, 0, .25));
+    transform: translateZ(1px);
+}
+
+.kitob-sahifasi .b-soya-new {
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+/* titul sahifa matni */
+.kitob-sahifasi .b-sahifa[data-tur="title"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: calc(var(--pw) * .1) calc(var(--pw) * .16) calc(var(--pw) * .1) calc(var(--pw) * .1);
+    text-align: center;
+}
+
+.kitob-sahifasi .b-janr {
+    align-self: center;
+    margin-bottom: 1em;
+    color: var(--s-siyoh-xira);
+    font-size: .75em;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.kitob-sahifasi .b-nomi {
+    margin: 0;
+    font-size: 2em;
+    line-height: 1.2;
+}
+
+.kitob-sahifasi .b-bezak {
+    display: block;
+    width: 3em;
+    height: 2px;
+    margin: 1.2em auto;
+    background-color: var(--s-oltin);
+}
+
+.kitob-sahifasi .b-muallif {
+    margin: 0;
+    font-style: italic;
+    font-size: 1.15em;
+}
+
+.kitob-sahifasi .b-qisqa {
+    margin: 1.4em 0 0;
+    color: var(--s-siyoh-xira);
+    font-size: .85em;
+}
+
+.kitob-sahifasi .b-belgi {
+    position: absolute;
+    right: 0;
+    bottom: calc(var(--pw) * .06);
+    left: 0;
+    color: var(--s-siyoh-xira);
+    letter-spacing: .25em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+    .kitob-sahifasi .b-sahna {
+        --pw: min(92vw, calc((100vh - 200px) / 1.3));
+        --ph: calc(var(--pw) * 1.3);
+    }
+
+    .kitob-sahifasi .s-oqish-boshi {
+        padding: 10px 14px;
+    }
+
+    .kitob-sahifasi .s-oqish-nomi {
+        font-size: 17px;
+    }
+}
