@@ -66,30 +66,83 @@
 
 
 
-            <main class="container py-5">
-                <div class="card border-0 shadow position-relative" id="kitobTafsilotlari">
-                    <a href="yoqimlilar.html" id="sevimliKitob" class="position-absolute top-0 end-0 m-3" aria-label="Sevimlilarga qo'shish">
-                        <img src="images/qoravariantyurak.png" width="32" height="32">
+            <main class="container py-4 py-lg-5 kitob-sahifasi">
+                <nav class="s-yoli" aria-label="Sahifa yo'li">
+                    <a href="index.html">Bosh sahifa</a><span aria-hidden="true">/</span>
+                    <a href="catalog.html">Katalog</a><span aria-hidden="true">/</span>
+                    <span id="yoliNomi" aria-current="page">Kitob</span>
+                </nav>
+
+                <div class="card border-0 position-relative" id="kitobTafsilotlari">
+                    <a href="yoqimlilar.html" id="sevimliKitob" class="s-sevimli" aria-label="Sevimlilarga qo'shish" title="Sevimlilarga qo'shish">
+                        <img src="images/qoravariantyurak.png" width="26" height="26" alt="">
                     </a>
                     <div class="row g-0">
-                        <div class="col-12 col-md-4 p-4 text-center">
-                            <img class="rasmcha img-fluid rounded" src="">
+                        <div class="col-12 col-md-5 col-lg-4">
+                            <div class="s-muqova-paneli">
+                                <div class="s-kitob">
+                                    <img class="rasmcha" src="" alt="">
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-12 col-md-8">
-                            <div class="card-body p-4 p-lg-5">
+                        <div class="col-12 col-md-7 col-lg-8">
+                            <div class="s-malumot">
                                 <p class="janr"></p>
-                                <h1 class="nomi display-5"></h1>
-                                <p class="muallif fs-5"></p>
+                                <h1 class="nomi"></h1>
+                                <p class="muallif"></p>
+                                <hr class="s-chiziq">
                                 <p class="tavsif"></p>
-                                <p class="narx fs-4 fw-bold"></p>
-                                <a href="savat.html" onclick="savatgaqoshish(book.id); return false" class="hisob-tugmasi">Savatga qo'shish+</a>
-                                <a href="#" id="onlineKitob" class="hisob-tugmasi d-none" style="margin-left: 20px;" target="_blank" rel="noopener noreferrer">Online Ko'rish</a>
+                                <div class="s-sotuv">
+                                    <div>
+                                        <span class="s-narx-yozuvi">Narxi</span>
+                                        <p class="narx"></p>
+                                    </div>
+                                    <div class="s-tugmalar">
+                                        <a href="savat.html" onclick="savatgaqoshish(book.id); return false" class="s-btn s-btn-asosiy">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 10.2a1.5 1.5 0 0 0 1.5 1.1h8.2a1.5 1.5 0 0 0 1.5-1.1L20 8H6.2"></path><circle cx="9.5" cy="19.5" r="1.2"></circle><circle cx="17" cy="19.5" r="1.2"></circle></svg>
+                                            Savatga qo'shish
+                                        </a>
+                                        <a href="#" id="onlineKitob" class="s-btn s-btn-ikkinchi d-none" target="_blank" rel="noopener noreferrer">
+                                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4H10a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H3.5A1.5 1.5 0 0 1 2 16.5Z"></path><path d="M22 5.5A1.5 1.5 0 0 0 20.5 4H14a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6.5a1.5 1.5 0 0 0 1.5-1.5Z"></path></svg>
+                                            Online ko'rish
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="kitobTopilmadi" class="alert alert-warning d-none" role="alert">
                     Kitob topilmadi. <a href="index.html" class="alert-link">Kitoblarga qayting.</a>
+                </div>
+
+                <div class="s-oqish" id="kitobOqish" role="dialog" aria-modal="true" aria-label="Kitobni online ko'rish" hidden>
+                    <div class="s-oqish-boshi">
+                        <strong class="s-oqish-nomi" id="oqishNomi"></strong>
+                        <div class="s-oqish-tugmalar">
+                            <a href="#" id="oqishYangiOyna" class="s-btn s-btn-ikkinchi" target="_blank" rel="noopener noreferrer">Asl manba</a>
+                            <button type="button" id="oqishYopish" class="s-btn s-btn-asosiy" aria-label="Yopish">&times; Yopish</button>
+                        </div>
+                    </div>
+                    <div class="b-sahna">
+                        <div class="b-kitob" id="bKitob">
+                            <div class="b-sahifa b-ong" data-yon="ong">
+                                <p class="b-yuklanish">Sayt yuklanmoqda... Agar ko'rinmasa, tepadagi "Asl manba" tugmasini bosing.</p>
+                                <iframe id="oqishOyna" title="Kitob sayti" referrerpolicy="no-referrer"></iframe>
+                            </div>
+                            <div class="b-muqova" id="bMuqova" tabindex="0" role="button" aria-label="Kitob muqovasi: ochish yoki yopish uchun bosing yoki torting">
+                                <div class="b-muqova-old">
+                                    <img src="" alt="">
+                                    <span class="b-ochish-yozuv">Bosing yoki sichqoncha bilan torting</span>
+                                </div>
+                                <div class="b-sahifa b-muqova-orqa" id="bTitul" data-yon="chap" data-tur="title"></div>
+                                <i class="b-soya b-soya-old"></i><i class="b-soya b-soya-new"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b-pastki">
+                        <button type="button" id="bOchish" class="s-btn s-btn-asosiy">Kitobni ochish</button>
+                    </div>
                 </div>
             </main>
 
@@ -101,6 +154,7 @@
 
     <script src="db.js"></script>
     <script src="script.js"></script>
+    <script src="oqish.js"></script>
     <script>
         const id = Number(new URLSearchParams(window.location.search).get("id"));
         const book = Kitoblar.find(item => item.id === id);
@@ -110,6 +164,8 @@
             document.querySelector(".rasmcha").alt = book.nomi;
             document.querySelector(".janr").textContent = book.janr;
             document.querySelector(".nomi").textContent = book.nomi;
+            document.querySelector("#yoliNomi").textContent = book.nomi;
+            document.title = `${book.nomi} | Bookly`;
             document.querySelector(".muallif").textContent = `Muallif: ${book.muallif}`;
             document.querySelector(".tavsif").textContent = book.tavsif;
             document.querySelector(".narx").textContent = `${book.narx} so'm`;
@@ -117,6 +173,10 @@
             if (book.link) {
                 onlineKitob.href = book.link;
                 onlineKitob.classList.remove("d-none");
+                onlineKitob.addEventListener("click", event => {
+                    event.preventDefault();
+                    KitobOqish.ochish(book);
+                });
             }
             document.querySelector("#sevimliKitob").addEventListener("click", event => {
                 event.preventDefault();
